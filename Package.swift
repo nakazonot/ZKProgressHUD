@@ -7,7 +7,7 @@ let package = Package(
         .library(name: "ZKProgressHUD", targets: ["ZKProgressHUD"])
     ],
     targets: [
-        .target(name: "ZKProgressHUD", dependencies: [], path: "ZKProgressHUD", sources: ["ZKProgressHUD"])
+        .target(name: "ZKProgressHUD", dependencies: [], path: "ZKProgressHUD")
     ],
     swiftLanguageVersions: [.v5]
 )
