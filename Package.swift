@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -7,7 +7,14 @@ let package = Package(
         .library(name: "ZKProgressHUD", targets: ["ZKProgressHUD"])
     ],
     targets: [
-        .target(name: "ZKProgressHUD", dependencies: [], path: "ZKProgressHUD")
+        .target(
+            name: "ZKProgressHUD",
+            dependencies: [],
+            path: "ZKProgressHUD",
+            resources: [
+                .process("ZKProgressHUD.bundle")
+            ]
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )
