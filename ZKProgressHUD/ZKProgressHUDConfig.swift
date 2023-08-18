@@ -26,9 +26,13 @@ final class ZKProgressHUDConfig {
     
     static let restorationIdentifier: String = "ZKProgressHUD"
     static let ZKNSNotificationDismiss = NSNotification.Name(rawValue: "ZKNSNotificationDismiss")
-    
+
+#if SWIFT_PACKAGE
+    private static let imageBundle = Bundle(url: Bundle.module.url(forResource: "ZKProgressHUD", withExtension: "bundle")!)
+#else
     private static let imageBundle = Bundle(url: Bundle(for: ZKProgressHUD.self).url(forResource: "ZKProgressHUD", withExtension: "bundle")!)
-    
+#endif
+
     static func bundleImage(_ imageType: ImageType) -> UIImage? {
         var imageName: String!
         switch imageType {
